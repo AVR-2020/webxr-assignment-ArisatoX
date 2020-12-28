@@ -2,9 +2,13 @@
 <head>
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
 </head>
 <body>
-    <a-scene background="color: black" environment="preset: forest; skyColor:  #198575;">
+    <a-scene physics="gravity: -9.8" background="color: black" environment="preset: forest; skyColor:  #198575;">
         {# assets #}
         <a-assets>
             <a-asset-item id="bow-obj" src="assets/bow/sg-bow-2-rotated-nostring.obj"></a-asset-item>
@@ -20,25 +24,25 @@
         {# camera #}
         <a-camera>
             <a-entity
+                universal-controls
                 cursor="fuse: true; fuseTimeout: 500"
                 geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
                 material="color: #ff0000; shader: flat"
                 position="0 0 -1.5"
-            ></a-entity>
+            >
+            </a-entity>
         </a-camera>
-        
-        {# bow and arrow #}
-        <a-entity id="preShotArrow" obj-model="obj: #arrow-obj; mtl: #arrow-mtl"position="0 0 0 " scale="0.05 0.05 0.05" visible="false"></a-entity>
-        <a-entity id="bowContainer" bow-and-arrow position="-0.5 1 -0.5"></a-entity>
 
-        {# hands #}
-        <a-entity id="leftHand" hand-controls="left" aabb-collider="objects:#bow;" grab></a-entity>
-        <a-entity id ="rightHand" hand-controls="right" aabb-collider="objects:#bow;" grab></a-entity>
+        {# ground #}
+        <a-grid static-body position="0 -0.001 0"></a-grid>
+        
+        {# weapon  #}
+        <a-entity static-body obj-model="obj: #bow-obj; mtl: #bow-mtl" scale="0.1 0.1 0.1" position="5 1 0"></a-entity>
+        <a-entity static-body obj-model="obj: #arrow-obj; mtl: #arrow-mtl" scale="0.01 0.01 0.01" position="6 1 0"></a-entity>
 
         {# animals #}
-        <a-entity obj-model="obj: #deer-obj; mtl: #deer-mtl" scale="0.1 0.1 0.1"></a-entity>
+        <a-entity dynamic-body obj-model="obj: #deer-obj; mtl: #deer-mtl" scale="0.1 0.1 0.1" position="10 5 0"></a-entity>
 
-        </a-entity>
     </a-scene>
 </body>
 </html>
