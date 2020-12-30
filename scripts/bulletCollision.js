@@ -5,14 +5,20 @@ const bulletCollision = () => {
 };
 
 const bulletCollided = event => {
-    if (event.detail.body.el.id === 'horseAnimal') {
-        console.log("hit horse");
+    if (event.detail.body.el.className === 'rocks') 
+    {
+        console.log("hit rocks");
         event.detail.target.el.removeEventListener('collide', bulletCollided);
-    }
 
-    if (event.detail.body.el.id === 'deerAnimal') {
-        console.log("hit deer");
+    }
+    else if (event.detail.body.el.className === 'target') 
+    {
+        console.log("hit animal");
         event.detail.target.el.removeEventListener('collide', bulletCollided);
+
+        // Remove Animal (temp)
+        mainScene.removeChild(event.detail.body.el);
+        scoreIncrement();
     }
 };
 
