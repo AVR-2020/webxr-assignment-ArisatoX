@@ -1,3 +1,14 @@
+// Testing for DB
+var model = [
+    "#horse",
+    "#deer"
+];
+
+var scale = [
+    "0.3 0.3 0.3",
+    "0.1 0.1 0.1"
+];
+
 const bulletCollision = () => {
     var bullet = document.querySelector("#bullet-id");
     bullet.emit("shoot-start");
@@ -21,11 +32,12 @@ const bulletCollided = event => {
 
         // Add new animal
         const animal = document.createElement("a-entity");
+        var id = Math.floor(Math.random() * model.length);
         animal.setAttribute("class", "target");
         animal.setAttribute("dynamic-body", "linearDamping: 0.9; angularDamping: 0.9;");
         animal.setAttribute("random-position", "min: -25 0 -15; max: 20 0 25;");
-        animal.setAttribute("scale", "0.3 0.3 0.3");
-        animal.setAttribute("gltf-model", "#horse");
+        animal.setAttribute("gltf-model", model[id]);
+        animal.setAttribute("scale", scale[id]);
         mainScene.appendChild(animal);
     }
 };
