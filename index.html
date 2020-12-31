@@ -11,6 +11,7 @@
     <!-- custom scripts -->
     <script src="scripts/bulletCollision.js"></script>
     <script src="scripts/score.js"></script>
+    <script src="scripts/timer.js"></script>
 
 </head>
 <body>
@@ -63,10 +64,14 @@
             </a-entity>
 
             <!-- Timer -->
-            <a-plane static-body shader="flat" color="#CACACA" height="0.2" width="0.7" position="0 0.7 -1"></a-plane>
+            <a-plane position="0 0.7 -1" opacity="0">
+                <a-text static-body id="timer-id" value="05:00" width="3" align="center" shader="flat"></a-plane>
+            </a-plane>
             
             <!-- Scoreboard -->
-            <a-text static-body id="score-id" value="0" width="3" align="right" shader="flat" position="1.5 0.7 -1"></a-plane>
+            <a-plane position="1.5 0.7 -1" opacity="0">
+                <a-text static-body id="score-id" value="0" width="3" align="center" shader="flat"></a-plane>
+            </a-plane>
             
         </a-camera>
 
