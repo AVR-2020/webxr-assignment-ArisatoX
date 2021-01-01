@@ -36,9 +36,11 @@ const bulletCollided = event => {
     {
         event.detail.target.el.removeEventListener('collide', bulletCollided);
 
-        // Move animal to new place (respawn)
+        // Increment score and remove animal
         scoreIncrement();
-        var animal = event.detail.body.el;
+        mainScene.removeChild(event.detail.body.el);
+        
+        // Randomizer for position
         var x = Math.floor(Math.random() * 20);
         var z = Math.floor(Math.random() * 20);
 
@@ -49,10 +51,18 @@ const bulletCollided = event => {
         var positionNow = x + " 0 " + z;
         console.log(positionNow);
 
-        animal.setAttribute("position", positionNow);
+        // Randomizer for animal id
+        var randomizer = Math.floor(Math.random() * model.length);
 
-        console.log(animal);
-        
+        // Create animal
+        let animal = document.createElement("a-entity");
+        animal.setAttribute("class", "target");
+        animal.setAttribute("position", positionNow);
+        animal.setAttribute("kinematic-body", "linearDamping: 0.9; angularDamping: 0.9;");
+        animal.setAttribute("gltf-model", model[randomizer]);
+        animal.setAttribute("scale", scale[randomizer]);
+        mainScene.appendChild(animal);
+
     }
 };
 
