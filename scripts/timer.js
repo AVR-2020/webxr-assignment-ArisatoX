@@ -24,4 +24,5 @@ window.onload = function () {
     var gameplayTime = 300;
     var timerDisplay = document.querySelector('#timer-id');
     startTimer(gameplayTime, timerDisplay);
+    walkAnimation();
 };

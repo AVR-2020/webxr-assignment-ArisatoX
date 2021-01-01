@@ -26,7 +26,7 @@ const bulletCollided = event => {
     {
         event.detail.target.el.removeEventListener('collide', bulletCollided);
 
-        // Remove animal (temp)
+        // Remove animal
         mainScene.removeChild(event.detail.body.el);
         scoreIncrement();
 
@@ -35,7 +35,7 @@ const bulletCollided = event => {
         var id = Math.floor(Math.random() * model.length);
         animal.setAttribute("class", "target");
         animal.setAttribute("dynamic-body", "linearDamping: 0.9; angularDamping: 0.9;");
-        animal.setAttribute("random-position", "min: -25 0 -15; max: 20 0 25;");
+        animal.setAttribute("random-position", "min: -20 0 -15; max: 20 0 20;");
         animal.setAttribute("gltf-model", model[id]);
         animal.setAttribute("scale", scale[id]);
         mainScene.appendChild(animal);

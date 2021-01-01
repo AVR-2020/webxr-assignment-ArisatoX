@@ -15,6 +15,7 @@
     <script src="scripts/bulletCollision.js"></script>
     <script src="scripts/score.js"></script>
     <script src="scripts/timer.js"></script>
+    <script src="scripts/animation.js"></script>
 
 </head>
 <body>
@@ -85,10 +86,18 @@
         <a-plane id="ground" static-body position="0 -0.02 0" rotation="-90 0 0" height="1000" width="1000"></a-plane>
 
         <!-- animals -->
-        <a-entity class="target" dynamic-body="linearDamping: 0.9; angularDamping: 0.9;" position="10 0 10" scale="0.1 0.1 0.1" gltf-model="#deer">
+
+        <a-entity class="target" kinematic-body="linearDamping: 0.9; angularDamping: 0.9;" position="10 0 10" scale="0.1 0.1 0.1" gltf-model="#deer"
+            animation__rotation="
+                startEvents: rotationAnimation;
+            "
+            animation__walk="
+                startEvents: walkAnimation;
+            " 
+        >
         </a-entity>
 
-        <a-entity class="target" dynamic-body="linearDamping: 0.9; angularDamping: 0.9;" position="5 0 10" scale="0.3 0.3 0.3" gltf-model="#horse">
+        <a-entity class="target" kinematic-body="linearDamping: 0.9; angularDamping: 0.9;" position="15 0 10" scale="0.3 0.3 0.3" gltf-model="#horse">
         </a-entity>
 
         <!-- house -->
