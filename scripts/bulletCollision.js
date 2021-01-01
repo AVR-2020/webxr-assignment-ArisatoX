@@ -68,7 +68,7 @@ const bulletCollided = event => {
 
 // Start Script
 document.onkeydown = event => {
-    if (event.which == 32) {
+    if (event.which == 32 && timeout == false) {
         bulletCollision();
     }
 };
