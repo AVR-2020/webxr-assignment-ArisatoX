@@ -16,24 +16,15 @@ function startTimer(duration, display) {
 
         if (timer < 0) {
 
-            // Time ended
-            let gameover = document.createElement("a-plane");
-            gameover.setAttribute("id", "gameover");
-            gameover.setAttribute("position", "0 0 -1");
-            gameover.setAttribute("width", "1");
-            gameover.setAttribute("height", "0.5");
-            gameover.setAttribute("color", "#cacaca");
-            gameover.setAttribute("opacity", "30");
-            gameover.setAttribute("shader", "flat");
-            mainCamera.appendChild(gameover);
-
+            // Game Over
             let gameoverText = document.createElement("a-text");
             gameoverText.setAttribute("id", "gameover");
-            gameoverText.setAttribute("value", "Game Over");
+            gameoverText.setAttribute("value", "GAME OVER");
             gameoverText.setAttribute("width", "3");
             gameoverText.setAttribute("align", "center");
             gameoverText.setAttribute("shader", "flat");
-            gameover.appendChild(gameoverText);
+            gameoverText.setAttribute("position", "0 0.2 -1");
+            mainCamera.appendChild(gameoverText);
 
             timeout = true;
             clearInterval(interval);
@@ -42,7 +33,7 @@ function startTimer(duration, display) {
 }
 
 window.onload = function () {
-    var gameplayTime = 3;
+    var gameplayTime = 300;
     var timerDisplay = document.querySelector('#timer-id');
     startTimer(gameplayTime, timerDisplay);
     walkAnimation();
