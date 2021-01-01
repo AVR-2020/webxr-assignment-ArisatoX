@@ -14,7 +14,7 @@ function startTimer(duration, display) {
         if (timer < 0) {
 
             // Time ended
-            // console.log("Time's up")
+            console.log("Time's up")
             timer = duration;
         }
     }, 1000);

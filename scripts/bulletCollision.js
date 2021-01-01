@@ -9,6 +9,16 @@ var scale = [
     "0.1 0.1 0.1"
 ];
 
+var id_list = [
+    "horse-id",
+    "deer-id"
+]
+
+var minus = [
+    1,
+    -1
+]
+
 const bulletCollision = () => {
     var bullet = document.querySelector("#bullet-id");
     bullet.emit("shoot-start");
@@ -26,19 +36,23 @@ const bulletCollided = event => {
     {
         event.detail.target.el.removeEventListener('collide', bulletCollided);
 
-        // Remove animal
-        mainScene.removeChild(event.detail.body.el);
+        // Move animal to new place (respawn)
         scoreIncrement();
+        var animal = event.detail.body.el;
+        var x = Math.floor(Math.random() * 20);
+        var z = Math.floor(Math.random() * 20);
 
-        // Add new animal
-        const animal = document.createElement("a-entity");
-        var id = Math.floor(Math.random() * model.length);
-        animal.setAttribute("class", "target");
-        animal.setAttribute("dynamic-body", "linearDamping: 0.9; angularDamping: 0.9;");
-        animal.setAttribute("random-position", "min: -20 0 -15; max: 20 0 20;");
-        animal.setAttribute("gltf-model", model[id]);
-        animal.setAttribute("scale", scale[id]);
-        mainScene.appendChild(animal);
+        var randomizerMinus = Math.floor(Math.random() * minus.length);
+        x = x * minus[randomizerMinus];
+        z = z * minus[randomizerMinus];
+
+        var positionNow = x + " 0 " + z;
+        console.log(positionNow);
+
+        animal.setAttribute("position", positionNow);
+
+        console.log(animal);
+        
     }
 };
 

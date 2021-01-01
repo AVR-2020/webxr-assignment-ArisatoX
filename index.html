@@ -9,8 +9,9 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 
     <script src="https://unpkg.com/aframe-entity-generator-component@^3.0.0/dist/aframe-entity-generator-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script> 
-
+    <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
+    
+    
     <!-- custom scripts -->
     <script src="scripts/bulletCollision.js"></script>
     <script src="scripts/score.js"></script>
@@ -87,17 +88,12 @@
 
         <!-- animals -->
 
-        <a-entity class="target" kinematic-body="linearDamping: 0.9; angularDamping: 0.9;" position="10 0 10" scale="0.1 0.1 0.1" gltf-model="#deer"
-            animation__rotation="
-                startEvents: rotationAnimation;
-            "
-            animation__walk="
-                startEvents: walkAnimation;
-            " 
+        <a-entity class="target" id="deer-id" kinematic-body="linearDamping: 0.9; angularDamping: 0.9;" random-position="min: -20 0 -15; max: 20 0 20;" scale="0.1 0.1 0.1" gltf-model="#deer"
         >
         </a-entity>
 
-        <a-entity class="target" kinematic-body="linearDamping: 0.9; angularDamping: 0.9;" position="15 0 10" scale="0.3 0.3 0.3" gltf-model="#horse">
+        <a-entity class="target" id="horse-id" kinematic-body="linearDamping: 0.9; angularDamping: 0.9;" random-position="min: -20 0 -15; max: 20 0 20;" scale="0.3 0.3 0.3" gltf-model="#horse"
+        >
         </a-entity>
 
         <!-- house -->
