@@ -2,6 +2,7 @@ const gameoverText = () => {
 
     // Gameover text
     let textBox = document.createElement("a-plane");
+    textBox.setAttribute("id", "gameoverText");
     textBox.setAttribute("position", "0 0.2 -1");
     textBox.setAttribute("shader", "flat");
     textBox.setAttribute("opacity", "0.1");
@@ -10,7 +11,6 @@ const gameoverText = () => {
     mainCamera.appendChild(textBox);
 
     let gameoverText = document.createElement("a-text");
-    gameoverText.setAttribute("id", "gameover");
     gameoverText.setAttribute("value", "SELESAI");
     gameoverText.setAttribute("width", "3");
     gameoverText.setAttribute("align", "center");
@@ -19,6 +19,7 @@ const gameoverText = () => {
 
     // Score text
     let textBox2 = document.createElement("a-plane");
+    textBox2.setAttribute("id", "gameoverScore");
     textBox2.setAttribute("position", "0 -0.2 -1");
     textBox2.setAttribute("shader", "flat");
     textBox2.setAttribute("opacity", "0.1");
@@ -27,7 +28,6 @@ const gameoverText = () => {
     mainCamera.appendChild(textBox2);
 
     let gameoverScore = document.createElement("a-text");
-    gameoverScore.setAttribute("id", "gameoverScore");
     gameoverScore.setAttribute("value", "Skor: " + score);
     gameoverScore.setAttribute("width", "3");
     gameoverScore.setAttribute("align", "center");

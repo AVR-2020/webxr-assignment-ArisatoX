@@ -24,7 +24,7 @@ function startTimer(duration, display) {
 }
 
 function timerStart() {
-    var gameplayTime = 300;
+    var gameplayTime = 3;
     var timerDisplay = document.querySelector('#timer-id');
 
     startTimer(gameplayTime, timerDisplay);
