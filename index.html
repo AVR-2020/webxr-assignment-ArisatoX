@@ -29,14 +29,17 @@
 
         <!-- assets -->
         <a-assets>
+            <!-- animals -->
             <a-asset-item id="deer" src="assets/deer/deer.gltf"></a-asset-item>
             <a-asset-item id="horse" src="assets/horse/horse.gltf"></a-asset-item>
             <a-asset-item id="tiger" src="assets/tiger/tiger.gltf"></a-asset-item>
             
+            <!-- weapons -->
             <a-asset-item id="gun" src="assets/gun/gun.gltf"></a-asset-item>
             <a-asset-item id="bullet-obj" src="assets/bullet/50_Barrett.obj"></a-asset-item>
             <a-asset-item id="bullet-mtl" src="assets/bullet/50_Barrett.mtl"></a-asset-item>
 
+            <!-- other assets -->
             <a-asset-item id="house" src="assets/house/house.gltf"></a-asset-item>
             <a-asset-item id="rock" src="assets/rocks/rock.gltf"></a-asset-item>
         </a-assets>
@@ -54,8 +57,9 @@
                 >
                 </a-entity>
     
-                <!-- weapon -->
+                <!-- gun -->
                 <a-gltf-model static-body src="#gun" scale="0.2 0.2 0.2" position="0.5 -0.5 -1"></a-gltf-model>
+                
                 <!-- bullet -->
                 <a-entity 
                     static-body

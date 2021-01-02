@@ -20,22 +20,22 @@ const walkAnimation = () => {
             var pos = target[i].getAttribute("position");
             var newPos = pos.x + pos.y + pos.z;
             
-            if (afterRotation.y == "0" && pos.z < 23)
+            if (afterRotation.y == "0" && pos.z <= 18)
             {
                 var newZ = pos.z + 5;
                 newPos = pos.x + " " + pos.y + " " + newZ;
             }
-            if (afterRotation.y == "90" && pos.x < 24)
+            if (afterRotation.y == "90" && pos.x <= 19)
             {
                 var newX = pos.x + 5;
                 newPos = newX + " " + pos.y + " " + pos.z;
             }
-            if (afterRotation.y == "180" && pos.z > -23)
+            if (afterRotation.y == "180" && pos.z >= -18)
             {
                 var newZ = pos.z - 5;
                 newPos = pos.x + " " + pos.y + " " + newZ;
             }
-            if (afterRotation.y == "270" && pos.x > -26)
+            if (afterRotation.y == "270" && pos.x >= -21)
             {
                 var newX = pos.x - 5;
                 newPos = newX + " " + pos.y + " " + pos.z;

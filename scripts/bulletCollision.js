@@ -13,15 +13,25 @@ const bulletCollided = event => {
     }
     else if (event.detail.body.el.className === 'target') 
     {
-        event.detail.target.el.removeEventListener('collide', bulletCollided);
+        var health = event.detail.body.el.getAttribute("hit_points");
+        health--;
 
-        // Increment score and remove animal
-        scoreIncrement();
-        mainScene.removeChild(event.detail.body.el);
+        if (health == 0)
+        {
+            event.detail.target.el.removeEventListener('collide', bulletCollided);
 
-        // Create animal
-        animalGenerator(1);
+            // Increment score and remove animal
+            scoreIncrement();
+            mainScene.removeChild(event.detail.body.el);
 
+            // Create animal
+            animalGenerator(1);
+        }
+        else
+        {
+            event.detail.body.el.setAttribute("hit_points", health);
+        }
+        
     }
 };
 

@@ -10,6 +10,7 @@ function animalGenerator(amount) {
         animal.setAttribute("kinematic-body", "linearDamping: 0.9;");
         animal.setAttribute("gltf-model", model[randomizer]);
         animal.setAttribute("scale", scale[randomizer]);
+        animal.setAttribute("hit_points", hp[randomizer]);
         mainScene.appendChild(animal);
     }
 
