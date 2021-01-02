@@ -16,7 +16,12 @@
     <script src="scripts/bulletCollision.js"></script>
     <script src="scripts/score.js"></script>
     <script src="scripts/timer.js"></script>
-    <script src="scripts/animation.js"></script>
+    <script src="scripts/animalAnimation.js"></script>
+    <script src="scripts/positionRandomizer.js"></script>
+    <script src="scripts/animalGenerator.js"></script>
+
+    <!-- temporary file for DB testing -->
+    <script src="scripts/dbTemp.js"></script>
 
 </head>
 <body>
@@ -82,7 +87,6 @@
             </a-entity>
         </a-entity>
         
-
         <!-- ground  -->
         <a-plane id="ground" static-body position="0 -0.02 0" rotation="-90 0 0" height="1000" width="1000"></a-plane>
 
@@ -91,15 +95,6 @@
         <a-box id="bottom" static-body position="-1 0 -23" width="50" color="brown" height="4"></a-box>
         <a-box id="right" static-body position="-26 0 0" rotation="0 90 0" width="46" color="brown" height="4"></a-box>
         <a-box id="left" static-body position="24 0 0" rotation="0 90 0" width="46" color="brown" height="4"></a-box>
-
-        <!-- animals -->
-        <a-entity class="target" id="deer-id" kinematic-body="linearDamping: 0.9; angularDamping: 0.9;" random-position="min: -20 0 -15; max: 20 0 20;" scale="0.1 0.1 0.1" gltf-model="#deer"
-        >
-        </a-entity>
-
-        <a-entity class="target" id="horse-id" kinematic-body="linearDamping: 0.9; angularDamping: 0.9;" random-position="min: -20 0 -15; max: 20 0 20;" scale="0.3 0.3 0.3" gltf-model="#horse"
-        >
-        </a-entity>
 
         <!-- house -->
         <a-gltf-model static-body="shape: box" src="#house" scale="0.3 0.3 0.3" position="-30 0 15"></a-gltf-model>
