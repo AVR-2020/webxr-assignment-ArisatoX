@@ -13,6 +13,7 @@ const bulletCollided = event => {
     }
     else if (event.detail.body.el.className === 'target') 
     {
+        hit.play();
         var health = event.detail.body.el.getAttribute("hit_points");
         health--;
 
@@ -35,9 +36,19 @@ const bulletCollided = event => {
     }
 };
 
-// Start Script
+// keydown listener
 document.onkeydown = event => {
-    if (event.which == 32 && timeout == false) {
+
+    if (event.which == 32 && timeout == false && canShoot == true) {
+        canShoot = false;
+        setTimeout(function() { canShoot = true; }, 1000);
+        gunshot.play();
+        setTimeout(function() { reload.play(); }, 500);
         bulletCollision();
     }
+    
+    if (event.which == 82 && timeout == true) {
+        location.reload();
+    }
+    
 };

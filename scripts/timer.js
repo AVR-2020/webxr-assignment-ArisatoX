@@ -1,5 +1,3 @@
-var timeout = false;
-
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
 
@@ -17,14 +15,7 @@ function startTimer(duration, display) {
         if (timer < 0) {
 
             // Game Over
-            let gameoverText = document.createElement("a-text");
-            gameoverText.setAttribute("id", "gameover");
-            gameoverText.setAttribute("value", "GAME OVER");
-            gameoverText.setAttribute("width", "3");
-            gameoverText.setAttribute("align", "center");
-            gameoverText.setAttribute("shader", "flat");
-            gameoverText.setAttribute("position", "0 0.2 -1");
-            mainCamera.appendChild(gameoverText);
+            gameoverText();
 
             timeout = true;
             clearInterval(interval);
@@ -32,13 +23,28 @@ function startTimer(duration, display) {
     }, 1000);
 }
 
-window.onload = function () {
+function timerStart() {
     var gameplayTime = 300;
     var timerDisplay = document.querySelector('#timer-id');
-    
+
     startTimer(gameplayTime, timerDisplay);
+    walkAnimation();
+    main.play();
+}
+
+window.onload = function () {
+    var title = document.querySelector("#title");
+    var instruction = document.querySelector("#instructions");
+    var startButton = document.querySelector("#start");
+    console.log(startButton)
+
+    startButton.addEventListener("click", function() {
+        mainScene.removeChild(title);
+        mainScene.removeChild(instruction);
+        mainScene.removeChild(startButton);
+        timerStart();
+    });
 
     animalGenerator(5);
-
-    walkAnimation();
 };
+

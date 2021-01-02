@@ -19,12 +19,15 @@
     <script src="scripts/animalAnimation.js"></script>
     <script src="scripts/positionRandomizer.js"></script>
     <script src="scripts/animalGenerator.js"></script>
+    <script src="scripts/gameoverText.js"></script>
+
 
     <!-- temporary file for DB testing -->
     <script src="scripts/dbTemp.js"></script>
 
 </head>
 <body>
+
     <a-scene id="mainScene" physics="gravity: -9.8;" background="color: black" environment="preset: forest; skyColor:  #198575; ground: flat;">
 
         <!-- assets -->
@@ -45,8 +48,8 @@
         </a-assets>
         
         <!-- camera -->
-        <a-entity id="rig" movement-controls="speed: 0.5">
-            <a-entity id="mainCamera" camera position="0 1.6 0" look-controls>
+        <a-entity id="rig" rotation="0 270 0" position="-24 1.6 10" movement-controls="speed: 0.5">
+            <a-entity id="mainCamera" camera look-controls>
 
                 <!-- cursor -->
                 <a-entity
@@ -59,7 +62,7 @@
     
                 <!-- gun -->
                 <a-gltf-model static-body src="#gun" scale="0.2 0.2 0.2" position="0.5 -0.5 -1"></a-gltf-model>
-                
+
                 <!-- bullet -->
                 <a-entity 
                     static-body
@@ -80,17 +83,38 @@
                 </a-entity>
     
                 <!-- Timer -->
-                <a-plane position="0 0.7 -1" opacity="0">
-                    <a-text static-body id="timer-id" value="05:00" width="3" align="center" shader="flat"></a-plane>
-                </a-plane>
+                <a-text static-body id="timer-id" position="0 0.7 -1"  value="05:00" width="3" align="center" shader="flat"></a-text>
                 
-                <!-- Scoreboard -->
-                <a-plane position="1.5 0.7 -1" opacity="0">
-                    <a-text static-body id="score-id" value="0" width="3" align="center" shader="flat"></a-plane>
-                </a-plane>
-                
+                <!-- Scoreboard -->   
+                <a-text static-body id="score-id" position="1.5 0.7 -1" value="0" width="3" align="center" shader="flat"></a-text>
+
             </a-entity>
         </a-entity>
+
+        <!-- title -->
+        <a-plane id="title" position="-21 2.5 10" rotation="0 270 0" opacity="0.1" color="#CACACA" width="8" height="1" shader="flat">
+            <a-text static-body value="HUNTING SEASON" width="12" align="center" shader="flat"></a-text>
+        </a-plane>
+       
+        <!-- instructions -->
+        <a-plane id="instructions" position="-21 1.3 10" rotation="0 270 0" opacity="0.1" width="8" height="1.3" shader="flat" color="#CACACA">
+            <a-text static-body width="3" align="center" color="white"
+                value="
+                    Tekan dan tahan tombol WASD untuk bergerak
+                    Tahan tombol mouse kiri untuk membidik
+                    Tekan SPACE untuk menembak
+
+                    Tekan R saat setelah permainan berakhir untuk reload page dan bermain lagi
+
+                    Arahkan kursormu ke tombol mulai untuk bermain!
+                "
+            ></a-text>
+        </a-plane>
+
+        <!-- game start -->
+        <a-plane id="start" position="-21 0.3 10" rotation="0 270 0" opacity="0.2" width="1.5" height="0.5" shader="flat" color="#CACACA">
+            <a-text static-body value="MULAI" width="7" align="center" color="white"></a-plane>
+        </a-plane>
         
         <!-- ground  -->
         <a-plane id="ground" static-body position="0 -0.02 0" rotation="-90 0 0" height="1000" width="1000"></a-plane>

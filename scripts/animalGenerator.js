@@ -4,6 +4,7 @@ function animalGenerator(amount) {
     {
         var randomizer = Math.floor(Math.random() * model.length);
         var positionNow = positionRandomizer();
+        
         let animal = document.createElement("a-entity");
         animal.setAttribute("class", "target");
         animal.setAttribute("position", positionNow);
