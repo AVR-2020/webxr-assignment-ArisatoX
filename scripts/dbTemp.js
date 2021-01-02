@@ -1,15 +1,12 @@
 // Testing for DB
 var model = [
     "#horse",
-    "#deer"
+    "#deer",
+    '#tiger'
 ];
 
 var scale = [
     "0.3 0.3 0.3",
-    "0.1 0.1 0.1"
+    "0.1 0.1 0.1",
+    "0.5 0.5 0.5"
 ];
-
-var id_list = [
-    "horse-id",
-    "deer-id"
-]
