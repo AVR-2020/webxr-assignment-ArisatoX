@@ -8,9 +8,7 @@
     <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 
-    <script src="https://unpkg.com/aframe-entity-generator-component@^3.0.0/dist/aframe-entity-generator-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
-    
+    <script src="https://unpkg.com/aframe-firebase-component@^4.0.0/dist/aframe-firebase-component.min.js"></script> 
     
     <!-- custom scripts -->
     <script src="scripts/bulletCollision.js"></script>
@@ -22,14 +20,20 @@
     <script src="scripts/gameoverText.js"></script>
     <script src="scripts/resetGame.js"></script>
 
-
     <!-- temporary file for DB testing -->
     <script src="scripts/dbTemp.js"></script>
 
 </head>
 <body>
 
-    <a-scene id="mainScene" physics="gravity: -9.8;" background="color: black" environment="preset: forest; skyColor:  #198575; ground: flat;">
+    <a-scene id="mainScene" firebase physics="gravity: -9.8;" background="color: black" environment="preset: forest; skyColor:  #198575; ground: flat;"
+        firebase="
+            apiKey: AIzaSyBzqNcBID0RXI8-S-mcXMAeB10DE5CL7ns;
+            authDomain: hunting-season-17aca.firebaseapp.com;
+            databaseURL: https://hunting-season-17aca-default-rtdb.firebaseio.com/;
+            storageBucket: hunting-season-17aca.appspot.com;
+        "
+    >
 
         <!-- assets -->
         <a-assets>

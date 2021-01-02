@@ -24,7 +24,7 @@ function startTimer(duration, display) {
 }
 
 function timerStart() {
-    var gameplayTime = 3;
+    var gameplayTime = 300;
     var timerDisplay = document.querySelector('#timer-id');
 
     startTimer(gameplayTime, timerDisplay);
@@ -36,14 +36,17 @@ window.onload = function () {
     var title = document.querySelector("#title");
     var instruction = document.querySelector("#instructions");
     var startButton = document.querySelector("#start");
-    console.log(startButton)
 
     startButton.addEventListener("click", function() {
         mainScene.removeChild(title);
         mainScene.removeChild(instruction);
         mainScene.removeChild(startButton);
+        timeout = false;
         timerStart();
     });
+
+    var test = document.querySelector('a-scene').systems.firebase.firebase;
+    console.log(test);
 
     animalGenerator(5);
 };

@@ -20,11 +20,15 @@ var hp = [
 // Local global variable
 var canShoot = true;
 
-var timeout = false;
+var timeout = true;
 
 var gunshot = new Audio('assets/sound/gunshot.mp3');
 var reload = new Audio('assets/sound/reload.mp3');
 var hit = new Audio('assets/sound/hit.mp3');
 var main = new Audio('assets/sound/main.mp3');
+
+main.volume = 0.4;
+gunshot.volume = 0.8;
+reload.volume = 0.8;
 
 var score = 0;
