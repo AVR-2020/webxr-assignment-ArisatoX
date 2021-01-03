@@ -14,6 +14,7 @@ function animalGenerator(amount) {
         animal.setAttribute("hit_points", hp[randomizer]);
         animal.setAttribute("scale", scale[randomizer]);
         mainScene.appendChild(animal);
+        console.log("finished loading");
     }
 
 }
