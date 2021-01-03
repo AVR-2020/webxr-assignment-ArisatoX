@@ -48,7 +48,6 @@
 
             <!-- other assets -->
             <a-asset-item id="house" src="assets/house/house.gltf"></a-asset-item>
-            <a-asset-item id="rock" src="assets/rocks/rock.gltf"></a-asset-item>
         </a-assets>
         
         <!-- camera -->
@@ -110,6 +109,7 @@
                     Tekan dan tahan tombol WASD untuk bergerak
                     Tahan tombol mouse kiri untuk membidik
                     Tekan SPACE untuk menembak
+                    Tekan R untuk mengisi peluru
 
                     Tekan R saat setelah permainan berakhir untuk mengulang skor dari 0 dan bermain lagi
 
@@ -134,15 +134,6 @@
 
         <!-- house -->
         <a-gltf-model static-body="shape: box" src="#house" scale="0.3 0.3 0.3" position="-30 0 15"></a-gltf-model>
-
-        <!-- rocks -->
-        <a-mixin 
-            id="rock-mixin" 
-            dynamic-body="mass: 10000000; linearDamping: 0.999; angularDamping: 0.999;" 
-            gltf-model="#rock" 
-            scale="0.03 0.03 0.03" 
-        >
-        </a-mixin>
 
     </a-scene>
 
