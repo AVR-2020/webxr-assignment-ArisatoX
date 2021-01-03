@@ -1,15 +1,15 @@
 <html>
 <head>
-    <!-- library -->
+    <!-- libraries -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 
-    <script src="https://unpkg.com/aframe-firebase-component@^4.0.0/dist/aframe-firebase-component.min.js"></script> 
-    
+    <!-- database dependencies -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
     <!-- custom scripts -->
     <script src="scripts/bulletCollision.js"></script>
     <script src="scripts/score.js"></script>
@@ -19,21 +19,18 @@
     <script src="scripts/animalGenerator.js"></script>
     <script src="scripts/gameoverText.js"></script>
     <script src="scripts/resetGame.js"></script>
+    <script src="scripts/onKeyDown.js"></script>
 
-    <!-- temporary file for DB testing -->
-    <script src="scripts/dbTemp.js"></script>
+    <!-- data from firebase -->
+    <script src="scripts/firebaseDatabase.js"></script>
+
+    <!-- local global variables -->
+    <script src="scripts/global.js"></script>
 
 </head>
 <body>
 
-    <a-scene id="mainScene" firebase physics="gravity: -9.8;" background="color: black" environment="preset: forest; skyColor:  #198575; ground: flat;"
-        firebase="
-            apiKey: AIzaSyBzqNcBID0RXI8-S-mcXMAeB10DE5CL7ns;
-            authDomain: hunting-season-17aca.firebaseapp.com;
-            databaseURL: https://hunting-season-17aca-default-rtdb.firebaseio.com/;
-            storageBucket: hunting-season-17aca.appspot.com;
-        "
-    >
+    <a-scene id="mainScene" physics="gravity: -9.8;" background="color: black" environment="preset: forest; skyColor:  #198575; ground: flat;">
 
         <!-- assets -->
         <a-assets>
@@ -66,7 +63,7 @@
                 </a-entity>
     
                 <!-- gun -->
-                <a-gltf-model static-body src="#gun" scale="0.2 0.2 0.2" position="0.5 -0.5 -1"></a-gltf-model>
+                <a-gltf-model static-body id="gun-id" ammo="10" src="#gun" scale="0.2 0.2 0.2" position="0.5 -0.5 -1"></a-gltf-model>
 
                 <!-- bullet -->
                 <a-entity 
@@ -93,6 +90,9 @@
                 <!-- Scoreboard -->   
                 <a-text static-body id="score-id" position="1.5 0.7 -1" value="0" width="3" align="center" shader="flat"></a-text>
 
+                <!-- Ammo -->   
+                <a-text static-body id="ammo-id" position="1.5 -0.7 -1" value="10" width="3" align="center" shader="flat"></a-text>
+
             </a-entity>
         </a-entity>
 
@@ -109,7 +109,7 @@
                     Tahan tombol mouse kiri untuk membidik
                     Tekan SPACE untuk menembak
 
-                    Tekan R saat setelah permainan berakhir untuk reload page dan bermain lagi
+                    Tekan R saat setelah permainan berakhir untuk mengulang skor dari 0 dan bermain lagi
 
                     Arahkan kursormu ke tombol mulai untuk bermain!
                 "

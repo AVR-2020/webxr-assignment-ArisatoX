@@ -35,22 +35,3 @@ const bulletCollided = event => {
         
     }
 };
-
-// keydown listener
-document.onkeydown = event => {
-
-    if (event.which == 32 && timeout == false && canShoot == true) 
-    {
-        canShoot = false;
-        setTimeout(function() { canShoot = true; }, 1000);
-        gunshot.play();
-        setTimeout(function() { reload.play(); }, 500);
-        bulletCollision();
-    }
-    
-    if (event.which == 82 && timeout == true) 
-    {
-        resetGame();
-    }
-    
-};

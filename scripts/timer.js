@@ -27,6 +27,7 @@ function timerStart() {
     var gameplayTime = 300;
     var timerDisplay = document.querySelector('#timer-id');
 
+    animalGenerator(5);
     startTimer(gameplayTime, timerDisplay);
     walkAnimation();
     main.play();
@@ -44,10 +45,5 @@ window.onload = function () {
         timeout = false;
         timerStart();
     });
-
-    var test = document.querySelector('a-scene').systems.firebase.firebase;
-    console.log(test);
-
-    animalGenerator(5);
 };
 
