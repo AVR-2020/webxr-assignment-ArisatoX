@@ -15,6 +15,8 @@ function startTimer(duration, display) {
         if (timer < 0) {
 
             // Game Over
+            var player = document.querySelector(".player");
+            player.setAttribute("position", "0 1.6 -3.5");
             gameoverText();
 
             timeout = true;
@@ -24,7 +26,7 @@ function startTimer(duration, display) {
 }
 
 function timerStart() {
-    var gameplayTime = 300;
+    var gameplayTime = 3;
     var timerDisplay = document.querySelector('#timer-id');
 
     animalGenerator(5);
@@ -45,5 +47,6 @@ window.onload = function () {
         timeout = false;
         timerStart();
     });
+
 };
 

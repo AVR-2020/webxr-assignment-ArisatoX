@@ -40,10 +40,4 @@ document.onkeydown = event => {
         ammoCountText.setAttribute("value", 10);
     }
     
-    // Restart Game
-    if (event.keyCode == 82 && timeout == true) 
-    {
-        resetGame();
-    }
-    
 };

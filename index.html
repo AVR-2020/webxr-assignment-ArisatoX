@@ -5,6 +5,7 @@
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
 
     <!-- database dependencies -->
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
@@ -51,7 +52,7 @@
         </a-assets>
         
         <!-- camera -->
-        <a-entity id="rig" rotation="0 270 0" position="-24 1.6 10" movement-controls="speed: 0.5">
+        <a-entity id="rig" class="player" rotation="0 270 0" position="-24 1.6 10" movement-controls="speed: 0.5">
             <a-entity id="mainCamera" camera look-controls>
 
                 <!-- cursor -->
@@ -98,12 +99,12 @@
         </a-entity>
 
         <!-- title -->
-        <a-plane id="title" position="-21 2.5 10" rotation="0 270 0" opacity="0.1" color="#CACACA" width="8" height="1" shader="flat">
+        <a-plane id="title" look-at="#mainCamera" position="-21 2.8 10" rotation="0 270 0" opacity="0.1" color="#CACACA" width="8" height="1" shader="flat">
             <a-text static-body value="HUNTING SEASON" width="12" align="center" shader="flat"></a-text>
         </a-plane>
        
         <!-- instructions -->
-        <a-plane id="instructions" position="-21 1.3 10" rotation="0 270 0" opacity="0.1" width="8" height="1.3" shader="flat" color="#CACACA">
+        <a-plane id="instructions" look-at="#mainCamera" position="-21 1.5 10" rotation="0 270 0" opacity="0.1" width="8" height="1.6" shader="flat" color="#CACACA">
             <a-text static-body width="3" align="center" color="white"
                 value="
                     Tekan dan tahan tombol WASD untuk bergerak
@@ -111,15 +112,15 @@
                     Tekan SPACE untuk menembak
                     Tekan R untuk mengisi peluru
 
-                    Tekan R saat setelah permainan berakhir untuk mengulang skor dari 0 dan bermain lagi
+                    Arahkan kursormu ke tombol MULAI untuk bermain
 
-                    Arahkan kursormu ke tombol mulai untuk bermain!
+                    Arahkan kursor ke tombol ULANG di tengah area game untuk mengulang permainan setelah berakhir
                 "
             ></a-text>
         </a-plane>
 
         <!-- game start -->
-        <a-plane id="start" position="-21 0.3 10" rotation="0 270 0" opacity="0.2" width="1.5" height="0.5" shader="flat" color="#CACACA">
+        <a-plane id="start" look-at="#mainCamera" position="-21 0.2 10" rotation="0 270 0" opacity="0.2" width="1.5" height="0.5" shader="flat" color="#CACACA">
             <a-text static-body value="MULAI" width="7" align="center" color="white"></a-plane>
         </a-plane>
         
