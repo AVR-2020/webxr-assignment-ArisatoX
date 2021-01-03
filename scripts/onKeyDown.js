@@ -30,7 +30,7 @@ document.onkeydown = event => {
     if (event.keyCode == 82 && timeout == false && canShoot == true) 
     {
         canShoot = false;
-        setTimeout(function() { canShoot = true; }, 2000);
+        setTimeout(function() { canShoot = true; }, 2200);
 
         var ammo = document.querySelector("#gun-id");
         var ammoCountText = document.querySelector("#ammo-id");
@@ -38,7 +38,6 @@ document.onkeydown = event => {
         reload.play();
         ammo.setAttribute("ammo", 10);
         ammoCountText.setAttribute("value", 10);
-
     }
     
     // Restart Game

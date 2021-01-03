@@ -10,11 +10,20 @@ var init = firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
 // Array for database
+var id = [];
 var model = [];
 var hp = [];
 var scale = [];
 
 // Get data
+database.ref('animals').child('id').on('value', function(snapshot)
+{
+    snapshot.forEach(function(child) 
+    {
+        id.push(child.val());
+    });
+});
+
 database.ref('animals').child('model').on('value', function(snapshot)
 {
     snapshot.forEach(function(child) 

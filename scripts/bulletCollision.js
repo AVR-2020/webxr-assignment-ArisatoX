@@ -22,7 +22,8 @@ const bulletCollided = event => {
             event.detail.target.el.removeEventListener('collide', bulletCollided);
 
             // Increment score and remove animal
-            scoreIncrement();
+            var type = event.detail.body.el.getAttribute("id");
+            scoreIncrement(type);
             mainScene.removeChild(event.detail.body.el);
 
             // Create animal
