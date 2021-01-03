@@ -1,5 +1,6 @@
 # Hunting Season
 Github Pages: https://avr-2020.github.io/webxr-assignment-ArisatoX/index.html
+
 Jika menggunakan Github pages, setelah selesai load pertama kali , tekan f5 untuk reload page dan barulah mulai bermain (detail bug dapat dilihat di bawah)
 
 # Penjelasan Game
