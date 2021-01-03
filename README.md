@@ -1,5 +1,6 @@
 # Hunting Season
-Live demo: https://avr-2020.github.io/webxr-assignment-ArisatoX/index.html
+Github Pages: https://avr-2020.github.io/webxr-assignment-ArisatoX/index.html
+Jika menggunakan Github pages, setelah selesai load pertama kali , tekan f5 untuk reload page dan barulah mulai bermain (detail bug dapat dilihat di bawah)
 
 # Penjelasan Game
 Game ini adalah game simulasi berburu yang dibuat dengan menggunakan A-Frame. Tujuan dari game ini adalah mendapatkan skor sebanyak-banyaknya dalam 5 menit dengan cara membunuh hewan yang ada di game ini. Terdapat 5 jenis hewan dan setiap hewan memiliki kriteria masing-masing seperti berikut:
