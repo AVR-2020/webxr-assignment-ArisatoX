@@ -26,7 +26,7 @@ function startTimer(duration, display) {
 }
 
 function timerStart() {
-    var gameplayTime = 3;
+    var gameplayTime = 300;
     var timerDisplay = document.querySelector('#timer-id');
 
     animalGenerator(5);
