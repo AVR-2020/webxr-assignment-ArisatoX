@@ -12,6 +12,8 @@ Game ini adalah game simulasi berburu yang dibuat dengan menggunakan A-Frame. Tu
 
 Pemain akan membawa sebuah tembak yang berisi 10 peluru. Jika peluru habis, maka pemain akan terpaksa mengisi peluru secara otomatis ketika menekan SPACE.
 
+Setelah game berakhir, pemain akan di teleport ke tengah area permainan. Disana, pemain dapat melihat skor yang mereka dapatkan dan dapat mengarahkan cursor ke tombol ulang untuk mengulangi permainan.
+
 # Cara bermain:
 - Tekan dan tahan WASD untuk bergerak
 - Tahan tombol mouse kiri untuk membidik
