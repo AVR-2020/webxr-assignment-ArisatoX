@@ -22,6 +22,15 @@ Setelah game berakhir, pemain akan di teleport ke tengah area permainan. Disana,
 - Tekan SPACE untuk menembak
 - Tekan R untuk mengisi kembali peluru
 
+# External resource yang digunakan
+- Libraries
+ * aframe environment component
+ * aframe physics system
+ * aframe extras
+ * aframe look-at component
+- Database
+ * firebase
+
 # Bug yang diketahui (* adalah cara untuk fix bug)
 - Saat menggunakan github pages untuk deploy, game akan mengalami load time yang cukup lama pada saat pertama kali di load (sekitar 5 - 10 detik)
   * Gunakan live server untuk membuka game
