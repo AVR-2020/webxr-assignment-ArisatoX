@@ -23,12 +23,13 @@ Setelah game berakhir, pemain akan di teleport ke tengah area permainan. Disana,
 - Tekan R untuk mengisi kembali peluru
 
 # External resource yang digunakan
-- Libraries
+Libraries
  * aframe environment component
  * aframe physics system
  * aframe extras
  * aframe look-at component
-- Database
+ 
+Database
  * firebase
 
 # Bug yang diketahui (* adalah cara untuk fix bug)
